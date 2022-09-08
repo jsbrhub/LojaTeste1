@@ -7,13 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() collapsed = false;
-  @Input() screenWidth = 0;
-
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  @Input() collapsed = false;
+  @Input() screenWidth = 0;
 
   getBodyClass(): string {
     let styleClass = '';
@@ -23,7 +23,10 @@ export class HeaderComponent implements OnInit {
     else if (this.collapsed && this.screenWidth <= 768 && this.screenWidth > 0) {
       styleClass = 'header-md-screen';  
     }
+    console.log(styleClass);
     return styleClass;
   }
+
+
 
 }
