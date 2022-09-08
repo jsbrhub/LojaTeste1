@@ -1,17 +1,20 @@
-<div class="sidenav" [ngClass]="collspsed ? 'sidenav-collspsed' : ''">
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
     <div class="logo-container">
-        <button class="logo">L</button>
-        <div class="logo-text" *ngIf="collspsed">Loja Online</div>
-        <button class="btn-close" *ngIf="collspsed">
+        <button class="logo" (click)="toggleCollapse()"><img  class="logo-img" src="../../assets/img/logo1.png"></button>
+        <div class="logo-text" *ngIf="collapsed">Liberdade</div>
+        <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
             <i class="fal fa-times close-icon"></i>
         </button>
     </div>
 
     <ul class="sidenav-nav"> 
         <li class="sidenav-nav-item" *ngFor="let data of navData">
-            <a class="sidenav-nav-link" [routerLink]="data.routerlink">                                
+            <a class="sidenav-nav-link" [routerLink]="data.routerlink"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}"
+            > 
                 <i class="sidenav-link-icon" [class]="data.icon"></i>
-                <span class="sidenav-link-text" *ngIf="collspsed">{{data.label}} </span>
+                <span class="sidenav-link-text" *ngIf="collapsed">{{data.label}} </span>
             </a>
         </li>
     </ul>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-body',
@@ -10,6 +10,23 @@ export class BodyComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  @Input() collapsed = false;
+  @Input() screenWidth = 0;
+
+  getBodyClass(): string {
+    let styleClass = '';
+    console.log(this.collapsed);
+    console.log(this.screenWidth);
+    if(this.collapsed && this.screenWidth > 768) {
+      styleClass = 'body-trimmed';
+    }
+    else if (this.collapsed && this.screenWidth <= 768 && this.screenWidth > 0) {
+      styleClass = 'body-md-screen';  
+    }
+    console.log(styleClass);
+    return styleClass;
   }
 
 }
