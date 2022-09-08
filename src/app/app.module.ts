@@ -15,6 +15,8 @@ import { SettingsComponent } from './settings/settings.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ImportsMaterialModule } from './shared/imports-material/imports-material/imports-material.module';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ImportsMaterialModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
