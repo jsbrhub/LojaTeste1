@@ -1,14 +1,31 @@
-* {
-    margin-left: 0;
-    padding: 0;
+.header {
+    width: 100%;
+    height: 4rem;
+    margin-left: 5rem;
+    z-index: 0;
+    position:  relative;
+    top: 0;
+    transition: all .5s ease;
+    background: rgb(185, 185, 185);
+}
+.body-trimmed {
+    width: calc(100% - 16rem);
+    margin-left: 16rem;
 }
 
-.header-trimmed {
-    width: calc(100% - 116.5625rem);
-    margin-left: 16.5625rem;
-}
-
-.header-md-screen {
+.body-md-screen {
     width: calc(100% - 5rem);
     margin-left: 5rem;
+}
+
+.headerMenu{
+    background-color: brown;
+}
+
+.example-icon {
+    padding: 0 14px;
+}
+
+.example-spacer {
+flex: 1 1 auto;
 }

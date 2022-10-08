@@ -17,13 +17,19 @@ export class HeaderComponent implements OnInit {
 
   getBodyClass(): string {
     let styleClass = '';
+  
     if(this.collapsed && this.screenWidth > 768) {
       styleClass = 'header-trimmed';
+      console.log(styleClass)
+      console.log('screenwidthtestetse:'+this.screenWidth);
+      console.log('collapsed:'+this.collapsed);
     }
     else if (this.collapsed && this.screenWidth <= 768 && this.screenWidth > 0) {
       styleClass = 'header-md-screen';  
+      console.log('styleClass:'+styleClass)
+      console.log('screenwidth:'+this.screenWidth);
+      console.log('collapsed:'+this.collapsed);
     }
-    console.log(styleClass);
     return styleClass;
   }
 
